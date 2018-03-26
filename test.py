@@ -11,11 +11,11 @@ class test_matrix(unittest.TestCase):
 
 
 	def test_add_matrixes(self):
-		self.assertEqual(Matrix(5,5,5,5), self.matrix + Matrix(4,3,2,1))
+		self.assertEqual(Matrix(5,5,5,5).__str__(), (self.matrix + Matrix(4,3,2,1)).__str__())
 
 
 	def test_radd_right(self):
-		self.assertEqual(Matrix(2,3,4,5),self.matrix+1)
+		self.assertEqual(Matrix(2,3,4,5).__str__(),(self.matrix+1).__str__())
 
 	def test_radd_left(self):
 		self.assertEqual(Matrix(2,3,4,5),1+self.matrix)
