@@ -29,16 +29,17 @@ class test_matrix(unittest.TestCase):
 		self.assertEqual(Matrix(2,3,4,5).__str__(),(self.matrix + 1).__str__())
 
 
-	def test_rsub_right(self):
+	def test_rsub(self):
 		self.assertNotEqual(Matrix(0,1,2,10),self.matrix-1)
 
 
-	def test_rmul_right(self):
+	def test_rmul_(self):
 		self.assertEqual(Matrix(9,9,21,21).__str__(), (self.matrix*3).__str__())
 
 
 	def test_sub(self):
-	 	self.assertRaisesRegex(WrongMatrix, "Wrong matrices. Must be the same size.", Matrix.__sub__, self.matrix, self.matrix2)
+		self.assertEqual(Matrix(0,1,2,3).__str__(), (1-self.matrix).__str__())
+		self.assertRaisesRegex(WrongMatrix, "Wrong matrices. Must be the same size.", Matrix.__sub__, self.matrix, self.matrix2)
 
 
 	def test_mul_matrixes(self):
